@@ -19,7 +19,7 @@
 		<java.version>1.8</java.version>
 		<maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>
 		<flyway-maven-plugin.version>4.0.2</flyway-maven-plugin.version>
-		<mysql-connector-java.version>8.0.22</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 
 		<!-- Spring MVC -->
 		<spring-framework.version>4.3.0.RELEASE</spring-framework.version>
@@ -70,7 +70,10 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>${flyway-maven-plugin.version}</version>
 				<configuration>
-					<driver>com.mysql.jdbc.Driver</driver>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
+					<url>jdbc:mysql://localhost:3306/brewer?useTimezone=true&amp;serverTimezone=UTC</url>
+					<user>root</user>
+					<password>123456</password>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -187,7 +190,6 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>${mysql-connector-java.version}</version>
-		    <scope>provided</scope>
 		</dependency>
 		
 		<!-- Spring Data JPA -->
